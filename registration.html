@@ -110,6 +110,12 @@
             background-color: #3A5A1D; /* Темнее при наведении */
             transform: scale(1.05); /* Увеличение при наведении */
         }
+
+        .success-message {
+            color: #90AACF; /* Цвет сообщения об успешной регистрации */
+            font-size: 18px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -127,16 +133,31 @@
     </nav>
     
     <main>
-        <h2>Заполните форму для регистрации</h2>
-        <form action="submit_registration.php" method="POST"> <!-- Укажите обработчик формы -->
+        <h2 id="form-title">Заполните форму для регистрации</h2>
+        <form id="registration-form" action="submit_registration.php" method="POST"> <!-- Укажите обработчик формы -->
             <input type="text" name="name" placeholder="Ваше имя" required>
             <input type="email" name="email" placeholder="Ваш email" required>
             <input type="submit" value="Зарегистрироваться">
         </form>
+        <div id="success-message" class="success-message" style="display: none;">
+            Регистрация успешна! Ваше объявление отправлено.
+        </div>
     </main>
 
     <footer>
         <p>Следите за нами в социальных сетях!</p>
     </footer>
+
+    <script>
+        document.getElementById('registration-form').onsubmit = function(event) {
+            event.preventDefault(); // Отменяем стандартное поведение формы
+            // Здесь можно добавить AJAX-запрос для отправки данных на сервер, если необходимо.
+
+            // Скрываем форму и показываем сообщение об успешной регистрации
+            document.getElementById('form-title').style.display = 'none';
+            document.getElementById('registration-form').style.display = 'none';
+            document.getElementById('success-message').style.display = 'block';
+        };
+    </script>
 </body>
 </html>
