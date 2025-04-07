@@ -25,7 +25,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
 
-      nav {
+        nav {
             margin: 20px 0;
             text-align: center; /* Центрирование навигации */
         }
@@ -64,7 +64,8 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Тень для основного контента */
             text-align: center; /* Центрирование текста */
         }
-    footer {
+
+        footer {
             background-color: #445B7D;
             padding: 10px;
             text-align: center;
@@ -72,28 +73,45 @@
             z-index: 1;
         }
 
-
         h2 {
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для заголовка */
+            margin-bottom: 20px; /* Отступ снизу */
         }
 
         /* Стиль для кнопки */
         .register-button {
             background-color: #4C7124;
             color: white;
-            padding: 10px 20px;
+            padding: 8px 15px; /* Уменьшенные размеры кнопки */
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 14px; /* Уменьшенный размер шрифта */
             transition: background-color 0.3s, transform 0.3s;
             margin-top: 20px;
             display: inline-block;
+            text-decoration: none; /* Убираем подчеркивание */
         }
 
         .register-button:hover {
             background-color: #3A5A1D; /* Темнее при наведении */
             transform: scale(1.05); /* Увеличение при наведении */
+        }
+
+        /* Адаптивность */
+        @media (max-width: 600px) {
+            nav ul li {
+                display: block; /* Вертикальное расположение на мобильных устройствах */
+                margin: 10px 0;
+            }
+
+            main {
+                padding: 15px; /* Уменьшение отступов на мобильных устройствах */
+            }
+
+            .register-button {
+                width: 100%; /* Кнопка на всю ширину на мобильных устройствах */
+            }
         }
     </style>
 </head>
@@ -115,10 +133,10 @@
         <h2>День программиста</h2>
         <p>Это уникальная возможность для всех любителей программирования и технологий собраться вместе, обменяться опытом и узнать о последних тенденциях в мире IT.</p>
         <p>Не упустите шанс стать частью этого события!</p>
-        <button class="register-button">Зарегистрироваться</button>
+        <a href="registration.html" class="register-button">Зарегистрироваться</a> <!-- Ссылка на страницу регистрации -->
     </main>
 
-   <footer>
+    <footer>
         <p>Следите за нами в социальных сетях!</p>
     </footer>
 </body>
