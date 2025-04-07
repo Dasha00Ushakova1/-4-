@@ -15,14 +15,16 @@
         }
 
         header {
-            background-color: #4C7124;
+            background-color: rgba(76, 113, 36, 0.9);
             color: white;
             padding: 20px;
             text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
 
         nav {
             margin: 20px 0;
+            text-align: center; /* Центрирование навигации */
         }
 
         nav ul {
@@ -38,20 +40,64 @@
         nav a {
             color: #90AACF;
             text-decoration: none;
+            transition: color 0.3s;
         }
 
         nav a:hover {
+            color: #FFFFFF;
             text-decoration: underline;
         }
 
         main {
+            max-width: 800px; /* Максимальная ширина основного контента */
+            margin: 20px auto; /* Центрирование основного контента */
             padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
+            border-radius: 10px;
+            backdrop-filter: blur(10px); /* Размытие фона */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Тень для основного контента */
+            text-align: center; /* Центрирование текста */
+        }
+
+        h2 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для заголовка */
+            opacity: 0; /* Начальное состояние для анимации */
+            animation: fadeIn 0.5s forwards; /* Анимация */
+            animation-delay: 0.2s; /* Задержка для заголовка */
+        }
+
+        p {
+            opacity: 0; /* Начальное состояние для анимации */
+            animation: fadeIn 0.5s forwards; /* Анимация */
+            animation-delay: 0.4s; /* Задержка для текста */
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s; /* Плавный переход для увеличения */
+        }
+
+        img:hover {
+            transform: scale(1.1); /* Увеличение изображения при наведении */
         }
 
         footer {
             background-color: #445B7D;
             padding: 10px;
             text-align: center;
+        }
+
+        /* Анимация для заголовков и текста */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -73,7 +119,7 @@
         <h2>Адрес мероприятия</h2>
         <p>Место проведения: Центр технологий, ул. Программирования, д. 1, г. Москва.</p>
         <p>Схема проезда:</p>
-        <img src="map.png" alt="Карта проезда" style="width:100%; height:auto;">
+        <img src="map.png" alt="Карта проезда">
     </main>
 
     <footer>
