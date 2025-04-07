@@ -63,7 +63,6 @@
             border-radius: 10px;
             backdrop-filter: blur(10px); /* Размытие фона */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Тень для основного контента */
-            animation: slideIn 1s ease-in-out; /* Анимация для основного контента */
             text-align: center; /* Центрирование текста */
         }
 
@@ -75,60 +74,52 @@
             z-index: 1;
         }
 
-        h2 {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для заголовка */
-            animation: fadeIn 1s ease-in-out; /* Анимация для заголовка */
+        /* Стили для слайдера */
+        .slider {
+            position: relative;
+            max-width: 100%;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
         }
 
-        /* Анимация для заголовка */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
         }
 
-        /* Анимация для основного контента */
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-100%);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
         }
 
-        /* Эффект параллакса для фона */
-        .parallax {
-            background-image: url('background-parallax.jpg'); /* Изображение для эффекта параллакса */
-            height: 100vh;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+        .slide img {
+            width: 100%;
+            border-radius: 10px;
         }
 
-        /* Анимация для кнопок */
-        @keyframes buttonPulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
+        .button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
-        nav a {
-            animation: buttonPulse 2s infinite; /* Пульсация кнопок */
+        .button:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
         }
     </style>
 </head>
@@ -150,10 +141,43 @@
     <main>
         <h2>Добро пожаловать!</h2>
         <p>Узнайте больше о нашем мероприятии, участвуйте в опросах и следите за новостями!</p>
+
+        <!-- Слайдер изображений -->
+        <div class="slider">
+            <div class="slides">
+                <div class="slide"><img src="image1.jpg" alt="Событие 1"></div>
+                <div class="slide"><img src="image2.jpg" alt="Событие 2"></div>
+                <div class="slide"><img src="image3.jpg" alt="Событие 3"></div>
+                        </div>
+            <button class="button prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="button next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
     </main>
 
     <footer>
         <p>Следите за нами в социальных сетях!</p>
     </footer>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            const offset = -index * 100; // Вычисляем смещение
+            document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
+        }
+
+        function moveSlide(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = totalSlides - 1; // Переход к последнему слайду
+            } else if (currentIndex >= totalSlides) {
+                currentIndex = 0; // Переход к первому слайду
+            }
+            showSlide(currentIndex);
+        }
+    </script>
 </body>
 </html>
+
