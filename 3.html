@@ -64,6 +64,10 @@
 
         h2 {
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для заголовка */
+            margin-bottom: 20px; /* Отступ снизу */
+            opacity: 0; /* Начальное состояние для анимации */
+            animation: fadeIn 0.5s forwards; /* Анимация заголовка */
+            animation-delay: 0.1s; /* Задержка для заголовка */
         }
 
         ul {
@@ -77,14 +81,14 @@
             transform: translateY(20px); /* Начальная позиция для анимации */
             animation: fadeIn 0.5s forwards; /* Анимация */
         }
-            footer {
+
+        footer {
             background-color: #445B7D;
             padding: 10px;
             text-align: center;
             position: relative;
             z-index: 1;
         }
-
 
         /* Анимация для элементов списка */
         @keyframes fadeIn {
