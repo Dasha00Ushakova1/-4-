@@ -12,6 +12,7 @@
             line-height: 1.6;
             background-color: #23262D;
             color: #FFFFFF;
+            overflow-x: hidden; /* Предотвращает горизонтальную прокрутку */
         }
 
         header {
@@ -19,6 +20,7 @@
             color: white;
             padding: 20px;
             text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Тень для заголовка */
         }
 
         nav {
@@ -28,34 +30,88 @@
         nav ul {
             list-style-type: none;
             padding: 0;
+            display: flex; /* Используем flexbox для навигации */
+            justify-content: center; /* Центрируем элементы навигации */
         }
 
         nav ul li {
-            display: inline;
             margin-right: 15px;
         }
 
         nav a {
             color: #90AACF;
             text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s; /* Плавный переход */
         }
 
         nav a:hover {
-            text-decoration: underline;
+            background-color: rgba(144, 170, 207, 0.5); /* Эффект при наведении */
+            transform: scale(1.1); /* Увеличение при наведении */
         }
 
         main {
             padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон для основного контента */
+            border-radius: 10px;
+            backdrop-filter: blur(10px); /* Размытие фона */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Тень для основного контента */
+            animation: fadeIn 1s ease-in-out; /* Анимация для основного контента */
         }
 
         footer {
             background-color: #445B7D;
             padding: 10px;
             text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        h2 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для заголовка */
+            animation: slideIn 1s ease-in-out; /* Анимация для заголовка */
+        }
+
+        /* Анимация для заголовка */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Анимация для основного контента */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Эффект параллакса для фона */
+        .parallax {
+            background-image: url('background-parallax.jpg'); /* Изображение для эффекта параллакса */
+            height: 100vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            z-index: -1; /* Помещаем за контентом */
         }
     </style>
 </head>
 <body>
+    <div class="parallax"></div> <!-- Элемент для эффекта параллакса -->
     <header>
         <h1>О мероприятии</h1>
     </header>
@@ -72,6 +128,8 @@
     <main>
         <h2>День программиста</h2>
         <p>Это уникальная возможность для всех любителей программирования и технологий собраться вместе, обменяться опытом и узнать о последних тенденциях в мире IT.</p>
+        <p>Присоединяйтесь к нам для участия в мастер-классах, лекциях и панельных дискуссиях!</p>
+        <p>Не упустите шанс познакомиться с интересными людьми и расширить свои горизонты в области технологий!</p>
     </main>
 
     <footer>
