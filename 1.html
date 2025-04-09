@@ -106,87 +106,50 @@
         }
 
         .register-button {
-            background-color: #9932CC; /* Цвет кноп
-            .register-button {
-                background-color: #9932CC; /* Цвет кнопки */
-                color: white;
-                padding: 10px 20px; /* Увеличенные размеры кнопки */
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                transition: background-color 0.3s, transform 0.3s;
-                margin-top: 15px;
-                display: inline-block;
-                text-decoration: none; /* Убираем подчеркивание */
-            }
+            background-color: #9932CC; /* Цвет кнопки */
+            color: white;
+            padding: 10px 20px; /* Увеличенные размеры кнопки */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 15px;
+            display: inline-block;
+            text-decoration: none; /* Убираем подчеркивание */
+        }
 
-            .register-button:hover {
-                background-color: #DA70D6; /* Цвет кнопки при наведении */
-                transform: scale(1.05); /* Увеличение при наведении */
-            }
+        .register-button:hover {
+            background-color: #DA70D6; /* Цвет кнопки при наведении */
+            transform: scale(1.05); /* Увеличение при наведении */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <img src="0620d717-2166-4b52-a971-4380b3fc5bbf.png" alt="Логотип" style="max-width: 100px; margin-right: 20px;">
+            <h1>О мероприятии</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="3.html">Программа</a></li>
+            <li><a href="4.html">Место проведения</a></li>
+            <li><a href="5.html">Контакты</a></li>
+        </ul>
+    </nav>
 
-            /* Иконки социальных сетей */
-            .social-icons {
-                margin-top: 20px;
-                display: flex;
-                justify-content: center; /* Центрирование иконок */
-            }
+    <main>
+        <h2>День программиста</h2>
+        <p>Это уникальная возможность для всех любителей программирования и технологий собраться вместе, обменяться опытом и узнать о последних тенденциях в мире IT.</p>
+        <p>Не упустите шанс стать частью этого события!</p>
+        <a href="registration.html" class="register-button">Зарегистрироваться</a> <!-- Ссылка на страницу регистрации -->
+    </main>
 
-            .social-icons a {
-                margin: 0 10px;
-                color: #FFFFFF;
-                font-size: 24px; /* Размер иконок */
-                transition: transform 0.3s;
-            }
-
-            .social-icons a:hover {
-                transform: scale(1.2); /* Увеличение иконки при наведении */
-            }
-
-            /* Адаптивность */
-            @media (max-width: 600px) {
-                nav ul {
-                    flex-direction: column; /* Вертикальное расположение на мобильных устройствах */
-                }
-
-                main {
-                    padding: 15px; /* Уменьшение отступов на мобильных устройствах */
-                }
-
-                .register-button {
-                    width: 100%; /* Кнопка на всю ширину на мобильных устройствах */
-                }
-
-                .social-icons {
-                    flex-direction: column; /* Вертикальное расположение иконок на мобильных устройствах */
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            
-                
-        </header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="3.html">Программа</a></li>
-                <li><a href="4.html">Место проведения</a></li>
-                <li><a href="5.html">Контакты</a></li>
-            </ul>
-        </nav>
-
-        <main>
-            <h2>День программиста</h2>
-            <p>Это уникальная возможность для всех любителей программирования и технологий собраться вместе, обменяться опытом и узнать о последних тенденциях в мире IT.</p>
-            <p>Не упустите шанс стать частью этого события!</p>
-            <a href="registration.html" class="register-button">Зарегистрироваться</a> <!-- Ссылка на страницу регистрации -->
-        </main>
-
-        <footer>
-            <p>Следите за нами в социальных сетях!</p>
-            
-        </footer>
-    </body>
+    <footer>
+        <p>Следите за нами в социальных сетях!</p>
+    </footer>
+</body>
 </html>
