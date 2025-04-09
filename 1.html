@@ -6,7 +6,7 @@
     <title>О мероприятии</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
@@ -15,26 +15,38 @@
             background-image: url('background.jpg'); /* Добавьте ваше изображение фона */
             background-size: cover;
             background-attachment: fixed;
+            animation: fadeIn 1s; /* Плавное появление страницы */
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         header {
             background-color: #9932CC; /* Основной цвет заголовка */
             color: white;
             padding: 20px;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            border-bottom: 5px solid #DA70D6; /* Нижняя граница для акцента */
         }
+
         nav {
             margin: 20px 0;
             text-align: center; /* Центрирование навигации */
         }
+
         nav ul {
             list-style-type: none;
             padding: 0;
         }
+
         nav ul li {
             display: inline;
             margin-right: 15px;
         }
+
         nav a {
             color: #DA70D6; /* Цвет ссылок */
             text-decoration: none;
@@ -42,21 +54,29 @@
             border-radius: 5px;
             transition: background-color 0.3s, transform 0.3s; /* Плавный переход */
         }
+
         nav a:hover {
             background-color: rgba(147, 112, 219, 0.5); /* Эффект при наведении */
             transform: scale(1.1); /* Увеличение при наведении */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тень при наведении */
         }
+
         main {
             max-width: 800px; /* Максимальная ширина основного контента */
             margin: 20px auto; /* Центрирование основного контента */
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон */
+            background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный фон */
             border-radius: 10px;
             backdrop-filter: blur(10px); /* Размытие фона */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Тень для основного контента */
             text-align: center; /* Центрирование текста */
+            transition: transform 0.3s; /* Плавный переход для основного блока */
         }
+
+        main:hover {
+            transform: translateY(-5px); /* Лёгкое поднятие блока при наведении */
+        }
+
         footer {
             background-color: #9370DB; /* Цвет футера */
             padding: 10px;
@@ -64,46 +84,56 @@
             position: relative;
             z-index: 1;
         }
-        h1, h2 { /* Добавлено для центрирования заголовков */
+
+        h1, h2 {
             text-align: center; /* Центрирование заголовков */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для заголовка */
             margin-bottom: 20px; /* Отступ снизу */
         }
+
         p {
             margin: 10px 0; /* Отступы для абзацев */
         }
+
         /* Стиль для кнопки */
         .register-button {
             background-color: #9932CC; /* Цвет кнопки */
             color: white;
-            padding: 8px 15px; /* Уменьшенные размеры кнопки */
+            padding: 10px 20px; /* Размер кнопки */
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 14px; /* Уменьшенный размер шрифта */
+            font-size: 16px; /* Размер шрифта */
             transition: background-color 0.3s, transform 0.3s;
             margin-top: 20px;
             display: inline-block;
             text-decoration: none; /* Убираем подчеркивание */
         }
+
         .register-button:hover {
-            background-color: #DA70D6; /* Цвет кнопки при наведении */
+                        #DA70D6; /* Цвет кнопки при наведении */
             transform: scale(1.05); /* Увеличение при наведении */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тень при наведении */
         }
+
         /* Иконки социальных сетей */
         .social-icons {
             margin-top: 20px;
+            display: flex;
+            justify-content: center; /* Центрирование иконок */
         }
+
         .social-icons a {
             margin: 0 10px;
             color: #FFFFFF;
-            font-size: 24px;
-                        font-size: 24px; /* Размер иконок */
+            font-size: 24px; /* Размер иконок */
             transition: transform 0.3s;
         }
+
         .social-icons a:hover {
             transform: scale(1.2); /* Увеличение иконки при наведении */
         }
+
         /* Адаптивность */
         @media (max-width: 600px) {
             nav ul li {
@@ -117,8 +147,7 @@
                 width: 100%; /* Кнопка на всю ширину на мобильных устройствах */
             }
             .social-icons {
-                display: flex;
-                justify-content: center; /* Центрирование иконок */
+                flex-direction: column; /* Вертикальное расположение иконок */
             }
         }
     </style>
@@ -146,7 +175,10 @@
     <footer>
         <p>Следите за нами в социальных сетях!</p>
         <div class="social-icons">
-            
+            <a href="https://facebook.com" target="_blank">📘</a>
+            <a href="https://twitter.com" target="_blank">🐦</a>
+            <a href="https://instagram.com" target="_blank">📸</a>
+            <a href="https://linkedin.com" target="_blank">🔗</a>
         </div>
     </footer>
 </body>
