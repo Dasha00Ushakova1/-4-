@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <header>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <img src="0620d717-2166-4b52-a971-4380b3fc5bbf.png" alt="Логотип" style="max-width: 100px; margin-right: 20px;">
+            <h1>О мероприятии</h1>
+        </div>
+    </header>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #F0FFF0; /* Светлый фон */
+            color: #333333; /* Темный цвет текста для контраста */
+            background-image: url('background.jpg'); /* Добавьте ваше изображение фона */
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        header {
+            background-color: #9932CC; /* Основной цвет заголовка */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            margin: 20px 0;
+            text-align: center; /* Центрирование навигации */
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex; /* Горизонтальное расположение элементов */
+            justify-content: center; /* Центрирование элементов навигации */
+            flex-wrap: wrap; /* Позволяет элементам переноситься на следующую строку */
+        }
+
+        nav ul li {
+            margin: 5px; /* Отступы между элементами */
+        }
+
+        nav a {
+            color: #DA70D6; /* Цвет ссылок */
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s; /* Плавный переход */
+        }
+
+        nav a:hover {
+            background-color: rgba(147, 112, 219, 0.5); /* Эффект при наведении */
+            transform: scale(1.1); /* Увеличение при наведении */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тень при наведении */
+        }
+
+        main {
+            max-width: 800px; /* Максимальная ширина основного контента */
+            margin: 20px auto; /* Центрирование основного контента */
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный фон */
+            border-radius: 10px;
+            backdrop-filter: blur(10px); /* Размытие фона */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Тень для основного контента */
+            text-align: center; /* Центрирование текста */
+        }
+
+        h2 {
+            animation: fadeIn 1s; /* Анимация для заголовка */
+        }
+
+        p {
+            margin: 10px 0; /* Отступы для абзацев */
+            line-height: 1.8; /* Увеличенный интервал между строками */
+            opacity: 0; /* Начальная прозрачность */
+            animation: fadeIn 1s forwards; /* Анимация для абзацев */
+        }
+
+        p:nth-of-type(1) {
+            animation-delay: 0.5s; /* Задержка для первого абзаца */
+        }
+
+        p:nth-of-type(2) {
+            animation-delay: 1s; /* Задержка для второго абзаца */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            background-color: #9370DB; /* Цвет футера */
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            margin-top: 20px; /* Отступ сверху для футера */
+        }
+
+        .register-button {
+            background-color: #9932CC; /* Цвет кнопки */
+            color: white;
+            padding: 10px 20px; /* Увеличенные размеры кнопки */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 15px;
+            display: inline-block;
+            text-decoration: none; /* Убираем подчеркивание */
+        }
+
+        .register-button:hover {
+            background-color: #DA70D6; /* Цвет кнопки при наведении */
+            transform: scale(1.05); /* Увеличение при наведении */
+        }
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="3.html">Программа дня</a></li>
+            <li><a href="4.html">Место проведения</a></li>
+            <li><a href="5.html">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>День программиста</h2>
+        <p>Это уникальная возможность для всех любителей программирования и технологий собраться вместе, обменяться опытом и узнать о последних тенденциях в мире IT.</p>
+        <p>Не упустите шанс стать частью этого события!</p>
+        <a href="registration.html" class="register-button">Зарегистрироваться</a> <!-- Ссылка на страницу регистрации -->
+    </main>
+
+    <footer>
+        <p style="opacity: 1;">Следите за нами в социальных сетях!</p> <!-- Убрана анимация -->
+    </footer>
+</body>
+</html>
