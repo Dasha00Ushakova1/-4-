@@ -3,13 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <header>
-    <div style="display: flex; align-items: center; justify-content: center;">
-        <img src="0620d717-2166-4b52-a971-4380b3fc5bbf.png" alt="Логотип" style="max-width: 100px; margin-right: 20px;"> <!-- Замените logo.png на путь к вашему логотипу -->
-        <h1>Контакты</h1>
-    </div>
-</header>
-    
+    <title>Контакты</title> <!-- Заголовок страницы -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -125,13 +119,16 @@
         /* Убираем анимацию для текста в футере */
         .no-animation {
             opacity: 1;
-                        animation: none; /* Убираем анимацию */
+            animation: none; /* Убираем анимацию */
         }
     </style>
 </head>
 <body>
     <header>
-        
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <img src="0620d717-2166-4b52-a971-4380b3fc5bbf.png" alt="Логотип" style="max-width: 100px; margin-right: 20px;"> <!-- Замените на путь к вашему логотипу -->
+            <h1>Контакты</h1>
+        </div>
     </header>
     
     <nav>
@@ -147,8 +144,8 @@
         <h2>Свяжитесь с нами</h2>
         <p>Email: <span id="email">Sos_students.com</span></p>
         <p>Телефон: <span id="phone">+8 496 754-97-51</span></p>
-        <button onclick="copyToClipboard('email')">Скопировать Email</button>
-        <button onclick="copyToClipboard('phone')">Скопировать Телефон</button>
+        <button onclick="copyToClipboard('email')" aria-label="Скопировать Email">Скопировать Email</button>
+        <button onclick="copyToClipboard('phone')" aria-label="Скопировать Телефон">Скопировать Телефон</button>
         <p id="notification"></p>
     </main>
 
@@ -179,4 +176,3 @@
     </script>
 </body>
 </html>
-
