@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информация для сотрудников</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F0F0F0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #4B0082;
+        }
+        h2 {
+            color: #9932CC;
+        }
+        .info-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #F9F9F9;
+        }
+        button {
+            background-color: #9932CC;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #DA70D6;
+        }
+        .employee-list {
+            margin-top: 10px;
+        }
+        .employee {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 5px 0;
+            background-color: #E6E6FA;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 5px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Информация для сотрудников</h1>
+
+        <div class="info-section">
+            <h2>Зарплата</h2>
+            <p>Ваша зарплата будет перечислена на ваш банковский счет 5-го числа каждого месяца.</p>
+            <button onclick="showModal('Запрос на изменение зарплаты')">Запросить изменение зарплаты</button>
+        </div>
+
+        <div class="info-section">
+            <h2>Перерывы</h2>
+            <p>Каждый сотрудник имеет право на 1-часовой обеденный перерыв и два 15-минутных перерыва в течение рабочего дня.</p>
+        </div>
+
+        <div class="info-section">
+            <h2>Кто и что делает</h2>
+            <div class="employee-list" id="employeeList">
+                <div class="employee">Ушакова Дарья- Мастер-класс</div>
+                <div class="employee">Тимощенкова Дарья - Вход/Встречает посетителей</div>
+                <div class="employee">Егорова ольга- Тимбилдинг</div>
+               <div class="employee">Ахметзянова Анастасия- Конференция</div>
+            </div>
+            <button onclick="addEmployee()">Добавить сотрудника</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно для запросов -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="modalMessage"></p>
+            <button onclick="closeModal()">Закрыть</button>
+        </div>
+    </div>
+
+    <script>
+        function showModal(message) {
+            document.getElementById('modalMessage').innerText = message;
+            document.getElementById('myModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+
+        // Закрытие модального окна при клике вне его
+        window.onclick = function(event) {
+            const modal = document.getElementById('myModal');
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        function addEmployee() {
+            const name = prompt("Введите имя сотрудника:");
+            const department = prompt("Введите отдел сотрудника:");
+            if (name && department) {
+                const employeeList = document.getElementById('employeeList');
+                const newEmployee = document.createElement('div');
+                newEmployee.className = 'employee';
+                newEmployee.innerText = `${name} - ${department}`;
+                employeeList.appendChild(newEmployee);
+                showModal(`Сотрудник ${name} добавлен в список!`);
+            } else {
+                showModal('Имя и отдел не могут быть пустыми.');
+            }
+        }
+    </script>
+</body>
+</html>
