@@ -96,7 +96,7 @@
         }
 
         input[type="submit"] {
-            background-color: #4C7124; /* Цвет кнопки */
+            background-color: #6A5ACD; /* Изменённый цвет кнопки */
             color: white;
             padding: 10px 15px;
             border: none;
@@ -107,10 +107,14 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #3A5A1D; /* Темнее при наведении */
+            background-color: #5A4FCF; /* Темнее при наведении */
             transform: scale(1.05); /* Увеличение при наведении */
         }
 
+        .success-message {
+            color: #90AACF; /* Цвет сообщения об успешной регистрации */
+            font-size: 18px;
+            margin-top: 20px;
         .success-message {
             color: #90AACF; /* Цвет сообщения об успешной регистрации */
             font-size: 18px;
@@ -120,7 +124,6 @@
 </head>
 <body>
     <header>
-       
         <h1>Регистрация</h1>
     </header>
     
@@ -152,6 +155,7 @@
     <script>
         document.getElementById('registration-form').onsubmit = function(event) {
             event.preventDefault(); // Отменяем стандартное поведение формы
+            
             // Здесь можно добавить AJAX-запрос для отправки данных на сервер, если необходимо.
 
             // Скрываем форму и показываем сообщение об успешной регистрации
