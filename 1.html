@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>О мероприятии</title>
+    <title>День программиста</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
@@ -16,25 +16,31 @@
             background-size: cover;
             background-attachment: fixed;
         }
+
         header {
-            background-color: rgba(76, 113, 36, 0.9);
+            background-color: rgba(76, 113, 36, 0.9); /* Полупрозрачный фон */
             color: white;
             padding: 20px;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            border-bottom: 5px solid #90AACF; /* Нижняя граница */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Тень для заголовка */
         }
+
         nav {
             margin: 20px 0;
             text-align: center; /* Центрирование навигации */
         }
+
         nav ul {
             list-style-type: none;
             padding: 0;
         }
+
         nav ul li {
             display: inline;
             margin-right: 15px;
         }
+
         nav a {
             color: #90AACF;
             text-decoration: none;
@@ -42,21 +48,24 @@
             border-radius: 5px;
             transition: background-color 0.3s, transform 0.3s; /* Плавный переход */
         }
+
         nav a:hover {
             background-color: rgba(144, 170, 207, 0.5); /* Эффект при наведении */
             transform: scale(1.1); /* Увеличение при наведении */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тень при наведении */
         }
+
         main {
             max-width: 800px; /* Максимальная ширина основного контента */
             margin: 20px auto; /* Центрирование основного контента */
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
+            background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон для основного контента */
             border-radius: 10px;
             backdrop-filter: blur(10px); /* Размытие фона */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Тень для основного контента */
             text-align: center; /* Центрирование текста */
         }
+
         footer {
             background-color: #9932CC;
             padding: 10px;
@@ -64,106 +73,111 @@
             position: relative;
             z-index: 1;
         }
-        h1, h2 { /* Добавлено для центрирования заголовков */
-            text-align: center; /* Центрирование заголовков */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для заголовка */
-            margin-bottom: 20px; /* Отступ снизу */
-            opacity: 0; /* Начальное состояние для анимации */
-            animation: fadeIn 0.5s forwards; /* Анимация заголовка */
-            animation-delay: 0.1s; /* Задержка для заголовка */
+
+        /* Стили для слайдера */
+        .slider {
+            position: relative;
+            max-width: 100%;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
         }
-        p {
-            opacity: 0; /* Начальное состояние для анимации */
-            transform: translateY(20px); /* Начальная позиция для анимации */
-            animation: fadeIn 0.5s forwards; /* Анимация для абзацев */
-            animation-delay: 0.3s; /* Задержка для абзацев */
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
         }
-        /* Анимация для элементов */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
         }
-        /* Стиль для кнопки */
-        .register-button {
-            background-color: #4C7124;
-            color: white;
-            padding: 8px 15px; /* Уменьшенные размеры кнопки */
+
+        .slide img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
             border: none;
-            border-radius:
-            border-radius: 5px;
+            padding: 10px;
             cursor: pointer;
-            font-size: 14px; /* Уменьшенный размер шрифта */
-            transition: background-color 0.3s, transform 0.3s;
-            margin-top: 20px;
-            display: inline-block;
-            text-decoration: none; /* Убираем подчеркивание */
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
-        .register-button:hover {
-            background-color: #3A5A1D; /* Темнее при наведении */
-            transform: scale(1.05); /* Увеличение при наведении */
+
+        .button:hover {
+            background-color: rgba(255, 255, 255, 1);
         }
-     
-        /* Иконки социальных сетей */
-        .social-icons {
-            margin-top: 20px;
+
+        .prev {
+            left: 10px;
         }
-        .social-icons a {
-            margin: 0 10px;
-            color: #FFFFFF;
-            font-size: 24px; /* Размер иконок */
-            transition: transform 0.3s;
-        }
-        .social-icons a:hover {
-            transform: scale(1.2); /* Увеличение иконки при наведении */
-        }
-        /* Адаптивность */
-        @media (max-width: 600px) {
-            nav ul li {
-                display: block; /* Вертикальное расположение на мобильных устройствах */
-                margin: 10px 0;
-            }
-            main {
-                padding: 15px; /* Уменьшение отступов на мобильных устройствах */
-            }
-            .register-button {
-                width: 100%; /* Кнопка на всю ширину на мобильных устройствах */
-            }
-            .social-icons {
-                display: flex;
-                justify-content: center; /* Центрирование иконок */
-            }
+
+        .next {
+            right: 10px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>О мероприятии</h1>
+        <h1>День программиста</h1>
+        <p>Дата: 13 сентября | Время: 10:00 - 16:00</p>
     </header>
-    <nav>
+    
+        <nav>
         <ul>
-            <li><a href="index.html">Главная</a></li>
+            <li><a href="1.html">О мероприятии</a></li>
             <li><a href="3.html">Программа дня</a></li>
             <li><a href="4.html">Место проведения</a></li>
             <li><a href="5.html">Контакты</a></li>
         </ul>
     </nav>
-
+    
     <main>
-        <h2>День программиста</h2>
-        <p>Это уникальная возможность для всех любителей программирования и технологий собраться вместе, обменяться опытом и узнать о последних тенденциях в мире IT.</p>
-        <p>Не упустите шанс стать частью этого события!</p>
-        <a href="registration.html" class="register-button">Зарегистрироваться</a> <!-- Ссылка на страницу регистрации -->
+        <h2>Добро пожаловать!</h2>
+        <p>Узнайте больше о нашем мероприятии, участвуйте в опросах и следите за новостями!</p>
+
+        <!-- Слайдер изображений -->
+        <div class="slider">
+            <div class="slides">
+                <div class="slide"><img src="image1.jpg" alt="Событие 1"></div>
+                <div class="slide"><img src="image2.jpg" alt="Событие 2"></div>
+                <div class="slide"><img src="image3.jpg" alt="Событие 3"></div>
+            </div>
+            <button class="button prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="button next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
     </main>
 
-        <footer>
+    <footer>
         <p>Следите за нами в социальных сетях!</p>
     </footer>
-    
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            const offset = -index * 100; // Вычисляем смещение
+            document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
+        }
+
+        function moveSlide(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = totalSlides - 1; // Переход к последнему слайду
+            } else if (currentIndex >= totalSlides) {
+                currentIndex = 0; // Переход к первому слайду
+            }
+            showSlide(currentIndex);
+        }
+    </script>
 </body>
 </html>
+
