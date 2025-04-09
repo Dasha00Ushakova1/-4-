@@ -89,14 +89,14 @@
         button:hover {
             background-color: #3b5a1b;
         }
-            footer {
+
+        footer {
             background-color: #445B7D;
             padding: 10px;
             text-align: center;
             position: relative;
             z-index: 1;
         }
-
 
         #notification {
             display: none;
@@ -114,6 +114,12 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        /* Убираем анимацию для текста в футере */
+        .no-animation {
+            opacity: 1; /* Устанавливаем видимость */
+            animation: none; /* Убираем анимацию */
         }
     </style>
 </head>
@@ -141,7 +147,7 @@
     </main>
 
     <footer>
-        <p>Следите за нами в социальных сетях!</p>
+        <p class="no-animation">Следите за нами в социальных сетях!</p>
     </footer>
 
     <script>
