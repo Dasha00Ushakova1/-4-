@@ -15,12 +15,6 @@
             background-image: url('background.jpg'); /* Добавьте ваше изображение фона */
             background-size: cover;
             background-attachment: fixed;
-            animation: fadeIn 1s; /* Анимация появления */
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
 
         header {
@@ -70,12 +64,30 @@
             backdrop-filter: blur(10px); /* Размытие фона */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Тень для основного контента */
             text-align: center; /* Центрирование текста */
-            animation: slideIn 0.5s; /* Анимация появления основного контента */
         }
 
-        @keyframes slideIn {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        h2 {
+            animation: fadeIn 1s; /* Анимация для заголовка */
+        }
+
+        p {
+            margin: 10px 0; /* Отступы для абзацев */
+            line-height: 1.8; /* Увеличенный интервал между строками */
+            opacity: 0; /* Начальная прозрачность */
+            animation: fadeIn 1s forwards; /* Анимация для абзацев */
+        }
+
+        p:nth-of-type(1) {
+            animation-delay: 0.5s; /* Задержка для первого абзаца */
+        }
+
+        p:nth-of-type(2) {
+            animation-delay: 1s; /* Задержка для второго абзаца */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         footer {
@@ -87,18 +99,6 @@
             margin-top: 20px; /* Отступ сверху для футера */
         }
 
-        h1, h2 {
-            text-align: center; /* Центрирование заголовков */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для заголовка */
-            margin-bottom: 20px; /* Отступ снизу */
-        }
-
-        p {
-            margin: 10px 0; /* Отступы для абзацев */
-            line-height: 1.8; /* Увеличенный интервал между строками */
-        }
-
-        /* Стиль для кнопки */
         .register-button {
             background-color: #9932CC; /* Цвет кнопки */
             color: white;
@@ -106,10 +106,11 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-                      transition: background-color 0.3s, transform 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
             margin-top: 20px;
             display: inline-block;
-            text-decoration: none; /* Убираем подчеркивание */
+            text-decoration: none; /* Убираем под
+                        text-decoration: none; /* Убираем подчеркивание */
         }
 
         .register-button:hover {
@@ -178,12 +179,7 @@
 
     <footer>
         <p>Следите за нами в социальных сетях!</p>
-        <div class="social-icons">
-            <a href="https://facebook.com" target="_blank">🌐</a> <!-- Замените на иконку Facebook -->
-            <a href="https://twitter.com" target="_blank">🐦</a> <!-- Замените на иконку Twitter -->
-            <a href="https://instagram.com" target="_blank">📸</a> <!-- Замените на иконку Instagram -->
-            <a href="https://linkedin.com" target="_blank">💼</a> <!-- Замените на иконку LinkedIn -->
-        </div>
+        
     </footer>
 </body>
 </html>
