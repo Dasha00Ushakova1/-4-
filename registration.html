@@ -6,7 +6,7 @@
     <title>Информация для сотрудников</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #F0F0F0;
             margin: 0;
             padding: 20px;
@@ -28,6 +28,8 @@
             color: #9932CC;
             margin-top: 20px;
             margin-bottom: 10px;
+            border-bottom: 2px solid #9932CC;
+            padding-bottom: 5px;
         }
         .badge, .ticket {
             padding: 20px;
@@ -49,6 +51,7 @@
             cursor: pointer;
             font-size: 16px;
             transition: background-color 0.3s ease;
+            margin-top: 10px;
         }
         button:hover {
             background-color: #DA70D6;
@@ -66,10 +69,16 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 16px;
+            transition: border-color 0.3s ease;
         }
         select:focus, input[type="number"]:focus {
             border-color: #9932CC;
             outline: none;
+        }
+        .info-text {
+            margin: 10px 0;
+            color: #555;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -79,7 +88,7 @@
 
         <h2>Билеты на мероприятия</h2>
         <div class="ticket">
-            <p>Здесь вы можете заказать билеты на предстоящие мероприятия. Пожалуйста, выберите мероприятие:</p>
+            <p class="info-text">Здесь вы можете заказать билеты на предстоящие мероприятия. Пожалуйста, выберите мероприятие:</p>
             <form>
                 <label for="event">Выберите мероприятие:</label>
                 <select id="event" name="event" required>
