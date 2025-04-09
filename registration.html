@@ -64,14 +64,14 @@
             margin: 10px 0 5px;
             font-weight: bold;
         }
-        select, input[type="number"] {
+        select, input[type="number"], input[type="text"] {
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 16px;
             transition: border-color 0.3s ease;
         }
-        select:focus, input[type="number"]:focus {
+        select:focus, input[type="number"]:focus, input[type="text"]:focus {
             border-color: #9932CC;
             outline: none;
         }
@@ -100,6 +100,9 @@
         <div class="ticket">
             <p class="info-text">Здесь вы можете заказать билеты на предстоящие мероприятия. Пожалуйста, выберите тип билета:</p>
             <form id="ticketForm">
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+
                 <label for="event">Выберите направление:</label>
                 <select id="event" name="event" required>
                     <option value="" disabled selected>-- Выберите билет --</option>
@@ -120,10 +123,11 @@
     <script>
         document.getElementById('ticketForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Предотвращаем отправку формы
+            const name = document.getElementById('name').value;
             const eventType = document.getElementById('event').value;
             const quantity = document.getElementById('quantity').value;
             const confirmationMessage = document.getElementById('confirmationMessage');
-            confirmationMessage.textContent = `Ваши билеты на успешно заказаны!`;
+            confirmationMessage.textContent = `Ваши билеты на ${quantity} ${eventType} успешно заказаны на имя ${name}!`;
             confirmationMessage.style.display = 'block';
         });
     </script>
