@@ -1,120 +1,129 @@
-<!DOCTYPE html> <html lang="ru"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>О мероприятии</title> <style> body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; background-color: #23262D; color: #FFFFFF; background-image: url('background.jpg'); /* Добавьте ваше изображение фона */ background-size: cover; background-attachment: fixed; }
-    header {
-        background-color: rgba(76, 113, 36, 0.9);
-        color: white;
-        padding: 20px;
-        text-align: center;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    }
-
-    nav {
-        margin: 20px 0;
-        text-align: center; /* Центрирование навигации */
-    }
-
-    nav ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    nav ul li {
-        display: inline;
-        margin-right: 15px;
-    }
-
-    nav a {
-        color: #90AACF;
-        text-decoration: none;
-        padding: 10px 15px;
-        border-radius: 5px;
-        transition: background-color 0.3s, transform 0.3s; /* Плавный переход */
-    }
-
-    nav a:hover {
-        background-color: rgba(144, 170, 207, 0.5); /* Эффект при наведении */
-        transform: scale(1.1); /* Увеличение при наведении */
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тень при наведении */
-    }
-
-    main {
-        max-width: 800px; /* Максимальная ширина основного контента */
-        margin: 20px auto; /* Центрирование основного контента */
-        padding: 20px;
-        background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
-        border-radius: 10px;
-        backdrop-filter: blur(10px); /* Размытие фона */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Тень для основного контента */
-        text-align: center; /* Центрирование текста */
-    }
-
-    footer {
-        background-color: #445B7D;
-        padding: 10px;
-        text-align: center;
-        position: relative;
-        z-index: 1;
-    }
-
-    h2 {
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для заголовка */
-        margin-bottom: 20px; /* Отступ снизу */
-    }
-
-    /* Стиль для кнопки */
-    .register-button {
-        background-color: #4C7124;
-        color: white;
-        padding: 8px 15px; /* Уменьшенные размеры кнопки */
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 14px; /* Уменьшенный размер шрифта */
-        transition: background-color 0.3s, transform 0.3s;
-        margin-top: 20px;
-        display: inline-block;
-        text-decoration: none; /* Убираем подчеркивание */
-    }
-
-    .register-button:hover {
-        background-color: #3A5A1D; /* Темнее при наведении */
-        transform: scale(1.05); /* Увеличение при наведении */
-    }
-
-    /* Адаптивность */
-    @media (max-width: 600px) {
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О мероприятии</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #23262D;
+            color: #FFFFFF;
+            background-image: url('background.jpg'); /* Добавьте ваше изображение фона */
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        header {
+            background-color: rgba(76, 113, 36, 0.9);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        nav {
+            margin: 20px 0;
+            text-align: center; /* Центрирование навигации */
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
         nav ul li {
-            display: block; /* Вертикальное расположение на мобильных устройствах */
-            margin: 10px 0;
+            display: inline;
+            margin-right: 15px;
         }
-
+        nav a {
+            color: #90AACF;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s; /* Плавный переход */
+        }
+        nav a:hover {
+            background-color: rgba(144, 170, 207, 0.5); /* Эффект при наведении */
+            transform: scale(1.1); /* Увеличение при наведении */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тень при наведении */
+        }
         main {
-            padding: 15px; /* Уменьшение отступов на мобильных устройствах */
+            max-width: 800px; /* Максимальная ширина основного контента */
+            margin: 20px auto; /* Центрирование основного контента */
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
+            border-radius: 10px;
+            backdrop-filter: blur(10px); /* Размытие фона */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Тень для основного контента */
+            text-align: center; /* Центрирование текста */
         }
-
+        footer {
+            background-color: #445B7D;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        h2 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для заголовка */
+            margin-bottom: 20px; /* Отступ снизу */
+        }
+        /* Стиль для кнопки */
         .register-button {
-            width: 100%; /* Кнопка на всю ширину на мобильных устройствах */
+            background-color: #4C7124;
+            color: white;
+            padding: 8px 15px; /* Уменьшенные размеры кнопки */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px; /* Уменьшенный размер шрифта */
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 20px;
+            display: inline-block;
+            text-decoration: none; /* Убираем подчеркивание */
         }
-    }
-</style>
-Найти еще
-</head> <body> <header> <h1>О мероприятии</h1> </header>
-<nav>
-    <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="3.html">Программа дня</a></li>
-        <li><a href="4.html">Место проведения</a></li>
-        <li><a href="5.html">Контакты</a></li>
-    </ul>
-</nav>
+        .register-button:hover {
+            background-color: #3A5A1D; /* Темнее при наведении */
+            transform: scale(1.05); /* Увеличение при наведении */
+        }
+        /* Адаптивность */
+        @media (max-width: 600px) {
+            nav ul li {
+                display: block; /* Вертикальное расположение на мобильных устройствах */
+                margin: 10px 0;
+            }
+            main {
+                padding: 15px; /* Уменьшение отступов на мобильных устройствах */
+            }
+            .register-button {
+                width: 100%; /* Кнопка на всю ширину на мобильных устройствах */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+              <h1>О мероприятии</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="3.html">Программа дня</a></li>
+            <li><a href="4.html">Место проведения</a></li>
+            <li><a href="5.html">Контакты</a></li>
+        </ul>
+    </nav>
 
-<main>
-    <h2>День программиста</h2>
-    <p>Это уникальная возможность для всех любителей программирования и технологий собраться вместе, обменяться опытом и узнать о последних тенденциях в мире IT.</p>
-    <p>Не упустите шанс стать частью этого события!</p>
-    <a href="registration.html" class="register-button">Зарегистрироваться</a> <!-- Ссылка на страницу регистрации -->
-</main>
+    <main>
+        <h2>День программиста</h2>
+        <p>Это уникальная возможность для всех любителей программирования и технологий собраться вместе, обменяться опытом и узнать о последних тенденциях в мире IT.</p>
+        <p>Не упустите шанс стать частью этого события!</p>
+        <a href="registration.html" class="register-button">Зарегистрироваться</a> <!-- Ссылка на страницу регистрации -->
+    </main>
 
-<footer>
-    <p>Следите за нами в социальных сетях!</p>
-</footer>
-</body> </html> 
+    <footer>
+        <p>Следите за нами в социальных сетях!</p>
+    </footer>
+</body>
+</html>
+
