@@ -15,51 +15,83 @@
             max-width: 800px;
             margin: auto;
             background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
         h1 {
             text-align: center;
             color: #4B0082;
+            margin-bottom: 20px;
         }
         h2 {
             color: #9932CC;
+            margin-top: 20px;
+            margin-bottom: 10px;
         }
         .badge, .ticket {
-            padding: 15px;
-            margin: 10px 0;
+            padding: 20px;
+            margin: 15px 0;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 8px;
             background-color: #F9F9F9;
+            transition: box-shadow 0.3s ease;
+        }
+        .badge:hover, .ticket:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
         button {
             background-color: #9932CC;
             color: white;
             border: none;
             border-radius: 5px;
-            padding: 10px 15px;
+            padding: 12px 20px;
             cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
         }
         button:hover {
             background-color: #DA70D6;
         }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        select, input[type="number"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        select:focus, input[type="number"]:focus {
+            border-color: #9932CC;
+            outline: none;
+        }
     </style>
 </head>
 <body>
+    <div class="container">
+        <h1>Информация для сотрудников</h1>
 
         <h2>Билеты на мероприятия</h2>
         <div class="ticket">
             <p>Здесь вы можете заказать билеты на предстоящие мероприятия. Пожалуйста, выберите мероприятие:</p>
             <form>
-                <label for="event">Выберите мероприятие:</label><br>
-                <select id="event" name="event">
+                <label for="event">Выберите мероприятие:</label>
+                <select id="event" name="event" required>
+                    <option value="" disabled selected>-- Выберите мероприятие --</option>
                     <option value="conference">Конференция</option>
                     <option value="workshop">Мастер-класс</option>
                     <option value="team_building">Тимбилдинг</option>
-                </select><br><br>
-                <label for="quantity">Количество билетов:</label><br>
-                <input type="number" id="quantity" name="quantity" min="1" required><br><br>
+                </select>
+
+                <label for="quantity">Количество билетов:</label>
+                <input type="number" id="quantity" name="quantity" min="1" required>
+
                 <button type="submit">Заказать билеты</button>
             </form>
         </div>
