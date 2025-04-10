@@ -87,6 +87,20 @@
             text-decoration: none;
             cursor: pointer;
         }
+        #secret-section {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #F9F9F9;
+        }
+        #error-message {
+            color: red;
+            display: none;
+            text-align: center;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -110,9 +124,23 @@
                 <div class="employee">Ушакова Дарья- Мастер-класс</div>
                 <div class="employee">Тимощенкова Дарья - Вход/Встречает посетителей</div>
                 <div class="employee">Егорова Ольга- Тимбилдинг</div>
-               <div class="employee">Ахметзянова Анастасия- Конференция</div>
+                <div class="employee">Ахметзянова Анастасия- Конференция</div>
             </div>
-            <button onclick="addEmployee()">Добавить сотрудника</button>
+                       <button onclick="addEmployee()">Добавить сотрудника</button>
+        </div>
+
+        <!-- Форма для входа в секретный раздел -->
+        <div class="info-section">
+            <h2>Доступ к тайному разделу</h2>
+            <input type="password" id="secretPassword" placeholder="Введите пароль" required>
+            <button onclick="checkSecretPassword()">Войти</button>
+            <p id="error-message"></p>
+        </div>
+
+        <div id="secret-section">
+            <h2>Секретный раздел</h2>
+            <p>Добро пожаловать в тайный раздел для сотрудников!</p>
+            <!-- Добавьте здесь содержимое вашего тайного раздела -->
         </div>
     </div>
 
@@ -157,6 +185,21 @@
                 showModal('Имя и отдел не могут быть пустыми.');
             }
         }
+
+        function checkSecretPassword() {
+            const password = document.getElementById('secretPassword').value;
+            const correctPassword = "2024"; // Замените на ваш пароль
+
+            if (password === correctPassword) {
+                document.getElementById('secret-section').style.display = "block";
+                document.getElementById('error-message').style.display = "none";
+            } else {
+                document.getElementById('error-message').innerText = "Неверный пароль!";
+                document.getElementById('error-message').style.display = "block";
+                document.getElementById('secret-section').style.display = "none";
+            }
+        }
     </script>
 </body>
 </html>
+
